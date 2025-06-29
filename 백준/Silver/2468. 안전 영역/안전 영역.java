@@ -26,14 +26,15 @@ public class Main {
 			}
 		}
 		
-		int max =0;
+		int max = 1;
 		for(int height=0; height<maxHeight+1; height++) {
 			checked = new boolean[n][n];
 			int cnt=0;
 			for(int i=0; i<n; i++) {
 				for(int j=0; j<n; j++) {
 					if(!checked[i][j] && map[i][j] > height){
-						cnt+=dfs(i,j,height);
+						cnt++;
+						dfs(i,j,height);
 					}
 					
 				}
@@ -43,7 +44,7 @@ public class Main {
 		System.out.println(max);
 	}
 	
-	static int dfs(int x, int y, int height) {
+	static void dfs(int x, int y, int height) {
 		checked[x][y] = true;
 		for(int i=0; i<4; i++) {
 			int nx = x +dx[i];
@@ -55,6 +56,5 @@ public class Main {
 				dfs(nx,ny, height);
 			}
 		}
-		return 1;
 	}
 }
