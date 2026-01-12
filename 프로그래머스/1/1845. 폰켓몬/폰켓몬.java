@@ -3,16 +3,16 @@ import java.util.*;
 class Solution {
     public int solution(int[] nums) {
         int answer = 0;
-        Map <Integer, Integer> hashMap = new HashMap<>();
+        Set <Integer> set = new HashSet<>();
         
         for(int num : nums) {
-            hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
+            set.add(num);
         }
         
         int n = nums.length/2;
         
-        if(hashMap.size() < n){
-            answer = hashMap.size();
+        if(set.size() < n){
+            answer = set.size();
         } else {
             answer = n;
         }
