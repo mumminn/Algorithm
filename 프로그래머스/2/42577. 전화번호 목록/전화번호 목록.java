@@ -10,7 +10,7 @@ class Solution {
             int len = phone_book[i].length();
             
             if(len < phone_book[i+1].length()){
-                 if(phone_book[i].equals(phone_book[i+1].substring(0, len))){
+                 if(phone_book[i+1].startsWith(phone_book[i])){
                     answer = false;
                     break;
                 }   
